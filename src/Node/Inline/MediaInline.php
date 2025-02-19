@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace DH\Adf\Node\Inline;
 
+use DH\Adf\Node\BlockNode;
 use DH\Adf\Node\InlineNode;
 
 class MediaInline extends InlineNode
@@ -15,7 +16,7 @@ class MediaInline extends InlineNode
     protected string $type = 'mediaInline';
     private string $id;
     private string $collection;
-    private ?string $type;
+    private ?string $attrType;
     private ?string $alt;
     private ?string $occurrenceKey;
     private ?float $width;
@@ -35,7 +36,7 @@ class MediaInline extends InlineNode
 
         $this->id = $id;
         $this->collection = $collection;
-        $this->type = $type;
+        $this->attrType = $type;
         $this->alt = $alt;
         $this->occurrenceKey = $occurrenceKey;
         $this->width = $width;
@@ -71,7 +72,7 @@ class MediaInline extends InlineNode
 
     public function getType(): ?string
     {
-        return $this->type;
+        return $this->attrType;
     }
 
     public function getAlt(): ?string
@@ -100,7 +101,7 @@ class MediaInline extends InlineNode
         
         $attrs['id'] = $this->id;
         $attrs['collection'] = $this->collection;
-        $attrs['type'] = $this->type;
+        $attrs['type'] = $this->attrType;
         $attrs['alt'] = $this->alt;
         $attrs['occurrenceKey'] = $this->occurrenceKey;
         $attrs['width'] = $this->width;
