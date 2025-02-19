@@ -29,6 +29,7 @@ use DH\Adf\Node\Inline\InlineCard;
 use DH\Adf\Node\Inline\Mention;
 use DH\Adf\Node\Inline\Status;
 use DH\Adf\Node\Inline\Text;
+use DH\Adf\Node\Inline\MediaInline;
 use DH\Adf\Node\Mark\Code;
 use DH\Adf\Node\Mark\Em;
 use DH\Adf\Node\Mark\Link;
@@ -76,6 +77,7 @@ abstract class Node implements JsonSerializable
         'text' => Text::class,
         'status' => Status::class,
         'date' => Date::class,
+        'mediaInline' => MediaInline::class,
 
         // mark nodes
         'em' => Em::class,
