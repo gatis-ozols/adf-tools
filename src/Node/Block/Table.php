@@ -20,6 +20,9 @@ class Table extends BlockNode
     public const LAYOUT_DEFAULT = 'default';
     public const LAYOUT_FULL_WIDTH = 'full-width';
     public const LAYOUT_WIDE = 'wide';
+    public const LAYOUT_CENTER = 'center';
+    public const LAYOUT_ALIGN_END = 'align-end';
+    public const LAYOUT_ALIGN_START = 'align-start';
 
     protected string $type = 'table';
     protected array $allowedContentTypes = [
@@ -35,6 +38,9 @@ class Table extends BlockNode
             self::LAYOUT_DEFAULT,
             self::LAYOUT_FULL_WIDTH,
             self::LAYOUT_WIDE,
+            self::LAYOUT_CENTER,
+            self::LAYOUT_ALIGN_END,
+            self::LAYOUT_ALIGN_START,
         ], true)) {
             throw new InvalidArgumentException(sprintf('Invalid layout "%s"', $layout));
         }
