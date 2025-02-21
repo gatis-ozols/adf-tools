@@ -14,6 +14,7 @@ use DH\Adf\Node\Block\CodeBlock;
 use DH\Adf\Node\Block\MediaSingle;
 use DH\Adf\Node\Block\OrderedList;
 use DH\Adf\Node\Block\Paragraph;
+use DH\Adf\Node\Block\TaskList;
 use DH\Adf\Node\BlockNode;
 use JsonSerializable;
 
@@ -35,5 +36,6 @@ class ListItem extends BlockNode implements JsonSerializable
         MediaSingle::class,
         OrderedList::class,
         Paragraph::class,
+        TaskList::class,
     ];
 }

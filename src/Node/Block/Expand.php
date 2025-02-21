@@ -46,6 +46,7 @@ class Expand extends BlockNode implements JsonSerializable
         Paragraph::class,
         Rule::class,
         Table::class,
+        TaskList::class,
     ];
 
     private ?string $title;

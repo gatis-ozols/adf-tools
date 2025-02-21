@@ -34,6 +34,7 @@ class Panel extends BlockNode
         Heading::class,
         OrderedList::class,
         Paragraph::class,
+        TaskList::class,
     ];
     private string $panelType;
 

@@ -25,6 +25,7 @@ use DH\Adf\Node\Block\Panel;
 use DH\Adf\Node\Block\Paragraph;
 use DH\Adf\Node\Block\Rule;
 use DH\Adf\Node\Block\Table;
+use DH\Adf\Node\Block\TaskList;
 use DH\Adf\Node\BlockNode;
 use DH\Adf\Node\Node;
 use JsonSerializable;
@@ -57,6 +58,7 @@ class TableCell extends BlockNode implements JsonSerializable
         Panel::class,
         Paragraph::class,
         Rule::class,
+        TaskList::class,
     ];
     private ?string $background;
     private ?int $colspan;

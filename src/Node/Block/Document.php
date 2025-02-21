@@ -51,6 +51,7 @@ class Document extends BlockNode implements JsonSerializable
         Rule::class,
         Table::class,
         Expand::class,
+        TaskList::class,
     ];
     private int $version = 1;
 
