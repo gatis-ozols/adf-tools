@@ -37,11 +37,23 @@ class TaskItem extends BlockNode {
         self::checkNodeData(static::class, $data, ['attrs']);
         self::checkRequiredKeys(['localId', 'state'], $data['attrs']);
 
-        return new self(
+        $node = new self(
             $data['attrs']['localId'],
             $data['attrs']['state'],
             $parent
         );
+
+        // set content if defined
+        if (\array_key_exists('content', $data)) {
+            foreach ($data['content'] as $nodeData) {
+                $class = Node::NODE_MAPPING[$nodeData['type']];
+                $child = $class::load($nodeData, $node);
+
+                $node->append($child);
+            }
+        }
+
+        return $node;
     }
 
     public function getLocalId(): string
