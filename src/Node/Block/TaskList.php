@@ -11,6 +11,10 @@ use DH\Adf\Node\Child\TaskItem;
 class TaskList extends BlockNode
 {
     protected string $type = 'taskList';
+    protected array $allowedContentTypes = [
+        TaskItem::class,
+        TaskList::class,
+    ];
 
     private string $localId;
 

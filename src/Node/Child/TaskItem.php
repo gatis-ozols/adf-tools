@@ -6,6 +6,7 @@ namespace DH\Adf\Node\Child;
 
 use DH\Adf\Node\BlockNode;
 use DH\Adf\Node\Node;
+use DH\Adf\Node\InlineNode;
 use InvalidArgumentException;
 
 class TaskItem extends BlockNode {
@@ -13,6 +14,9 @@ class TaskItem extends BlockNode {
     public const STATE_DONE = 'DONE';
 
     protected string $type = 'taskItem';
+    protected array $allowedContentTypes = [
+        InlineNode::class,
+    ];
 
     private string $localId;
     private string $state;
