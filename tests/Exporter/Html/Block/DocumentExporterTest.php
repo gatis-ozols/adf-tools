@@ -194,7 +194,7 @@ final class DocumentExporterTest extends TestCase
     {
         $document = (new Document())
             ->mediaSingle(MediaSingle::LAYOUT_WIDE)
-            ->media('6e7c7f2c-dd7a-499c-bceb-6f32bfbf30b5', Media::TYPE_FILE, 'my project files', 100, 200)
+            ->media(Media::TYPE_FILE, '6e7c7f2c-dd7a-499c-bceb-6f32bfbf30b5', 'my project files', 100, 200)
             ->end()
             ->end()
         ;
@@ -207,9 +207,9 @@ final class DocumentExporterTest extends TestCase
     {
         $document = (new Document())
             ->mediaGroup()
-            ->media('6e7c7f2c-dd7a-499c-bceb-6f32bfbf30b5', Media::TYPE_FILE, 'my project files', 100, 200)
+            ->media(Media::TYPE_FILE, '6e7c7f2c-dd7a-499c-bceb-6f32bfbf30b5', 'my project files', 100, 200)
             ->end()
-            ->media('7a7c7f2c-dd7a-499c-bceb-6f32bfbf30c7', Media::TYPE_FILE, 'my project files', 100, 200)
+            ->media(Media::TYPE_FILE, '7a7c7f2c-dd7a-499c-bceb-6f32bfbf30c7', 'my project files', 100, 200)
             ->end()
             ->end()
         ;

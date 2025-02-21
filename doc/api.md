@@ -213,3 +213,5 @@ Methods:
 - `Media::getId()` returns the ID of the media node
 - `Media::getMediaType()` returns the media type of the media node
 - `Media::getOccurrenceKey()` 
+- `Media::getUrl()` 
+- `Media::getAlt()` 

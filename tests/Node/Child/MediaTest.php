@@ -19,12 +19,12 @@ final class MediaTest extends TestCase
     {
         self::expectException(InvalidArgumentException::class);
 
-        $doc = (new Media('6e7c7f2c-dd7a-499c-bceb-6f32bfbf30b5', 'wow', 'my project files'))->toJson();
+        $doc = (new Media('wow', '6e7c7f2c-dd7a-499c-bceb-6f32bfbf30b5', 'my project files'))->toJson();
     }
 
     public function testMedia(): void
     {
-        $block = new Media('6e7c7f2c-dd7a-499c-bceb-6f32bfbf30b5', Media::TYPE_FILE, 'my project files', 100, 200, 'myOccurrenceKey');
+        $block = new Media(Media::TYPE_FILE, '6e7c7f2c-dd7a-499c-bceb-6f32bfbf30b5', 'my project files', 100, 200, 'myOccurrenceKey');
         $doc = $block->toJson();
 
         self::assertJsonStringEqualsJsonString($doc, json_encode([
