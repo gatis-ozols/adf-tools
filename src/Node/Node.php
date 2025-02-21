@@ -17,11 +17,13 @@ use DH\Adf\Node\Block\Panel;
 use DH\Adf\Node\Block\Paragraph;
 use DH\Adf\Node\Block\Rule;
 use DH\Adf\Node\Block\Table;
+use DH\Adf\Node\Block\TaskList;
 use DH\Adf\Node\Child\ListItem;
 use DH\Adf\Node\Child\Media;
 use DH\Adf\Node\Child\TableCell;
 use DH\Adf\Node\Child\TableHeader;
 use DH\Adf\Node\Child\TableRow;
+use DH\Adf\Node\Child\TaskItem;
 use DH\Adf\Node\Inline\Date;
 use DH\Adf\Node\Inline\Emoji;
 use DH\Adf\Node\Inline\Hardbreak;
@@ -61,6 +63,7 @@ abstract class Node implements JsonSerializable
         'rule' => Rule::class,
         'table' => Table::class,
         'expand' => Expand::class,
+        'taskList' => TaskList::class,
 
         // child nodes
         'listItem' => ListItem::class,
@@ -69,6 +72,7 @@ abstract class Node implements JsonSerializable
         'tableRow' => TableRow::class,
         'media' => Media::class,
         'inlineCard' => InlineCard::class,
+        'taskItem' => TaskItem::class,
 
         // inline nodes
         'emoji' => Emoji::class,
