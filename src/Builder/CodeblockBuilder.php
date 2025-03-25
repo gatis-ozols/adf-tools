@@ -10,9 +10,9 @@ trait CodeblockBuilder
 {
     use BuilderInterface;
 
-    public function codeblock(?string $language = null): CodeBlock
+    public function codeblock(?string $language = null, ?string $uniqueId = null): CodeBlock
     {
-        $block = new CodeBlock($language, $this);
+        $block = new CodeBlock($language, $uniqueId, $this);
         $this->append($block);
 
         return $block;

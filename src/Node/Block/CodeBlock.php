@@ -22,8 +22,9 @@ class CodeBlock extends BlockNode implements JsonSerializable
         Text::class,
     ];
     private ?string $language;
+    private ?string $uniqueId;
 
-    public function __construct(?string $language = null, ?BlockNode $parent = null)
+    public function __construct(?string $language = null, ?string $uniqueId = null, ?BlockNode $parent = null)
     {
         parent::__construct($parent);
         $this->language = $language;
@@ -31,9 +32,15 @@ class CodeBlock extends BlockNode implements JsonSerializable
 
     public static function load(array $data, ?BlockNode $parent = null): self
     {
-        self::checkNodeData(static::class, $data, ['attrs']);
+        self::checkNodeData(static::class, $data);
 
-        $node = new self($data['attrs']['language'] ?? null, $parent);
+        $language = null;
+        $uniqueId = null;
+        if(isset($data['attrs'])) {
+            $language = $data['attrs']['language'] ?? null;
+            $uniqueId = $data['attrs']['uniqueId'] ?? null;
+        }
+        $node = new self($language, $uniqueId, $parent);
 
         // set content if defined
         if (\array_key_exists('content', $data)) {
@@ -53,12 +60,20 @@ class CodeBlock extends BlockNode implements JsonSerializable
         return $this->language;
     }
 
+    public function getUniqueId(): ?string
+    {
+        return $this->uniqueId;
+    }
+
     protected function attrs(): array
     {
         $attrs = parent::attrs();
 
         if (null !== $this->language) {
             $attrs['language'] = $this->language;
+        }
+        if (null !== $this->uniqueId) {
+            $attrs['uniqueId'] = $this->uniqueId;
         }
 
         return $attrs;
